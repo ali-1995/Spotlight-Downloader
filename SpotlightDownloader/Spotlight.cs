@@ -47,7 +47,7 @@ namespace SpotlightDownloader
                 region,
                 DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")
             );
-
+            System.Net.ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
             byte[] stringRaw = webClient.DownloadData(request);
             return Encoding.UTF8.GetString(stringRaw);
         }
